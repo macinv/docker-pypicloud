@@ -12,6 +12,7 @@ nginx:
   build: ./nginx/
   ports:
     - 80:80
+    - 1443:1443
   environment:
     - TZ=America/Toronto
   links:
