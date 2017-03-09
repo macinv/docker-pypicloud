@@ -1,0 +1,19 @@
+pypicloud:
+  restart: always
+  image: stevearc/pypicloud
+  volumes:
+    - /etc/pypicloud:/etc/pypicloud
+  environment:
+    - TZ=America/Toronto
+    - S3_USE_SIGV4=True
+
+nginx:
+  restart: always
+  build: ./nginx/
+  ports:
+    - 80:80
+  environment:
+    - TZ=America/Toronto
+  links:
+    - pypicloud
+
