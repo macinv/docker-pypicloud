@@ -5,7 +5,7 @@ server {
 }
 
 server {
-    listen 1443;
+    listen 443;
     server_name pypi.macgfi.com;
     location / {
         proxy_pass http://pypicloud:8080;
